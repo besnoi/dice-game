@@ -4,6 +4,7 @@ posx=270
 posy=400
 start=false
 start2=false
+defaultside=true;
 function love.load()
     love.graphics.setBackgroundColor(0,0,0)
     player={}
@@ -39,7 +40,11 @@ function love.draw()
         for i=0,ch,50 do
             love.graphics.draw(back2,0,i,0,0.25,0.25) 
         end
-        drawSetup(computer,player,start2)
+        if (defaultside==true) then
+            drawSetup(computer,player,start2)
+        else
+            drawSetup(player,computer,start2)            
+        end
         if start2==true then
             love.graphics.setColor(1, 0, 0,0.6)
             if player.chances > computer.chances then
@@ -50,7 +55,8 @@ function love.draw()
                 love.graphics.print("Game Draw!!",posx,posy)
             end
         else
-            love.graphics.print("Click To Continue",cw/2-75,ch/2-10)
+            love.graphics.printf("Left click to continue",0,ch/2-30,cw,'center')            
+            love.graphics.printf("Right click to change side",0,ch/2+5,cw,'center')
         end
     end 
 end
@@ -66,14 +72,29 @@ function drawSetup(lside,rside,cond)
         love.graphics.draw(rside.pic,410,230,0,0.4,0.4)
     end
 end
-function love.mousereleased(leftbtn)
-    if start==true then
-        start2=true
-    end
-    start=true
+function love.mousereleased(x,y,btn)
     math.randomseed(os.time())
-    player.chances = math.random(1,6) 
-    computer.chances = math.random(1,6) 
+    if (btn==1) then
+        if start==true then
+            start2=true
+        end
+        start=true
+        player.chances = math.random(1,6) 
+        computer.chances = math.random(1,6) 
+    elseif btn==2 then
+        if start2==false then
+            --change side a/c to user's wish
+            if defaultside==true then
+                defaultside=false 
+            else
+                defaultside=true
+            end
+        else
+            computer.chances=math.random(2,6)
+            player.chances=math.random(1,computer.chances-1)
+            --cheat
+        end
+    end
     player.pic=love.graphics.newImage("images/dice/"..player.chances.."black.svg.png");   
     computer.pic=love.graphics.newImage("images/dice/"..computer.chances.."red.svg.png");   
 end
