@@ -8,8 +8,18 @@ This is my first LOVE2D Game. Nothing special about it, feel free to fork it
 
 ### How to run the game?
 You need to install LOVE2D to run the game as it is in source format
-### Want to see the project without running?
-Go to screenshots folder to have a peek
+### Want to get the feel of the game without running?
+Here's how the game looks like:-
+
+
+<p align="center">
+<a href="https://github.com/YoungNeer/dice-game/blob/master/screenshots/1.png"><img src="https://github.com/YoungNeer/dice-game/blob/master/screenshots/1.png" width=328 height=260/></a>
+  <a href="https://github.com/YoungNeer/dice-game/blob/master/screenshots/2.png"><img src="https://github.com/YoungNeer/dice-game/blob/master/screenshots/2.png" width=328 height=260/></a>
+<a href="https://github.com/YoungNeer/dice-game/blob/master/screenshots/3.png"><img src="https://github.com/YoungNeer/dice-game/blob/master/screenshots/3.png" width=328 height=260/></a>
+  <a href="https://github.com/YoungNeer/dice-game/blob/master/screenshots/5.png"><img src="https://github.com/YoungNeer/dice-game/blob/master/screenshots/5.png" width=328 height=260/></a><br>
+ <span style="align:center">A few other screenshots of the game</span>
+</p>
+
 ### Hacks in the game
 Everytime you right-click the computer will win, no matter what
 
