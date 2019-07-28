@@ -7,7 +7,19 @@ This is my first LOVE2D Game. Nothing special about it, feel free to fork it
 </p>
 
 ### How to run the game?
-You need to install LOVE2D to run the game as it is in source format
+First you need to install LOVE2D to run the game as it is in source format.
+
+If you are on *nix then this step is super-simple-
+```bash
+ sudo apt install love
+```
+
+And after that run
+
+```bash
+ love dice-game-master
+```
+
 ### Want to get the feel of the game without running?
 Here's how the game looks like:-
 
